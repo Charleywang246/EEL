@@ -1,7 +1,7 @@
 import eel
 from docx import Document
 
-dom = Document('./tamplate.docx')
+dom = Document('./files/tamplate.docx')
 list = []
 for text in dom.paragraphs:
     list.append(text.text)
@@ -16,7 +16,7 @@ def run(input):
     doc = Document()
     for i in list:
         doc.add_paragraph(i)
-    doc.save('demo.docx')
+    doc.save('./files/demo.docx')
 
 def nth_repl(s, sub, repl, n):
     find = s.find(sub)
