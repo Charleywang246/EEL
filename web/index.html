@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="/eel.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="name">姓名:</label><input type="text" name="name" id="name">
+    <br><label for="age">年齡:</label><input type="number" name="age" id="age">
+    <br><label>生日:</label>
+    <input type="number" name="year" id="time1"><span>年</span>
+    <input type="number" name="month" id="time2"><span>月</span>
+    <input type="number" name="day" id="time3"><span>日</span>
+    <br><button type="button" onclick="run()">提交</button>
+    <br><button type="button" id="dl"><a href="/demo.docx">Download</a></button>
+
+    <script>
+        async function run() {
+            list = [
+                [
+                    document.getElementById('name').value,
+                    document.getElementById('age').value
+                ],
+                [
+                    document.getElementById('time1').value + "年"
+                    + document.getElementById('time2').value + "月"
+                    + document.getElementById('time3').value + "日"
+                ]
+            ]
+            await eel.run(list)
+            
+            document.getElementById('dl').click()
+        }
+    </script>
+</body>
+</html>
